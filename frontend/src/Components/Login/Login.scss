@@ -1,0 +1,119 @@
+// LoginPage.scss
+$primary-color: #4CAF50;
+$secondary-color: #333;
+$btn-color: #fff;
+$input-color: #f1f1f1;
+$border-radius: 5px;
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  background-image: url('chat.png');
+
+  .login-box {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: $secondary-color;
+    }
+
+    .login-form {
+      .input-group {
+        margin-bottom: 15px;
+
+        input {
+          width: 100%;
+          padding: 12px;
+          font-size: 16px;
+          border: 1px solid #ddd;
+          border-radius: $border-radius;
+          background-color: $input-color;
+        }
+      }
+
+      .login-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: $primary-color;
+        color: $btn-color;
+        border: none;
+        border-radius: $border-radius;
+        font-size: 16px;
+        cursor: pointer;
+        margin-bottom: 10px;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+      }
+    }
+
+    .social-login {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48%;
+        padding: 10px;
+        border: none;
+        border-radius: $border-radius;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s;
+
+        &.google-btn {
+          background-color: #db4437;
+
+          &:hover {
+            background-color: darken(#db4437, 10%);
+          }
+        }
+
+        &.facebook-btn {
+          background-color: #3b5998;
+
+          &:hover {
+            background-color: darken(#3b5998, 10%);
+          }
+        }
+
+        img {
+          width: 20px;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .links {
+      text-align: center;
+      a {
+        color: $primary-color;
+        text-decoration: none;
+      }
+      p {
+        margin-top: 10px;
+      }
+    }
+  }
+}
