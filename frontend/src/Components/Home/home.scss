@@ -14,7 +14,6 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    overflow: hidden;
 
     .content {
       display: flex;
@@ -53,8 +52,8 @@
       position: absolute;
       bottom: 20px;
       right: 20px;
-      background-color: #008080;
-      border: none;
+      background-color:blue;
+      border:1px solid black;
       border-radius: 50%;
       width: 60px;
       height: 60px;

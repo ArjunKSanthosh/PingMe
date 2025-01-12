@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "./Home.scss";
+import React, { useEffect, useState } from "react";
+import './home.scss'
 import { useNavigate } from "react-router-dom";
 import route from "../route";
 import axios from "axios";
@@ -10,7 +10,9 @@ const Home = () => {
   const navigate = useNavigate();
   const [chatMember,setChatMembers]=useState([])
   
-
+  useEffect(()=>{
+          useDetails();
+        },[])
   const useDetails=async()=>{
     try {
       const {status,data}=await axios.get(`${route()}home`,{headers:{"Authorization":`Bearer ${value}`}})
@@ -37,11 +39,12 @@ const Home = () => {
                 </Link>
             )}
           <button className="show-users-icon" onClick={()=>{navigate('/listpeople')}}>
-                <img src="chat2.png" alt="" />          </button>
+                <img src="/chat2.png" alt="" />
+          </button>
         </div>
       </div>
   
   );
 };
 
-export default Home;
+export default Home;  

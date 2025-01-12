@@ -8,6 +8,8 @@ router.route("/signin").post(user.signIn);
 router.route("/signup").post(user.signUp);
 router.route('/home').get(Auth,user.home)
 router.route('/nav').get(Auth,user.nav);
+router.route('/listpeople').get(Auth,user.listpeople);
+
 
 
 export default router;

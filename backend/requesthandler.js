@@ -46,7 +46,6 @@ export async function signUp(req,res) {
   }
   export async function home(req,res) {
     try {
-        console.log("hi");
         const _id=req.user.userId;
         
         const user=await userSchema.findOne({_id});
@@ -72,6 +71,22 @@ export async function nav(req,res) {
         if(!user)
            return res.status(403).send({msg:"Login to continue"});
         return res.status(200).send({user});
+    } catch (error) {
+        return res.status(404).send({msg:"error"})
+    }
+}
+export async function listpeople(req,res){
+    try {
+        const _id=req.user.userId
+        
+        const user=await userSchema.findOne({_id})
+        if(!user)
+            return res.status(403).send({msg:"Login to continue"})
+        const people=await userSchema.find({_id:{$ne:_id}});
+        console.log(people);
+        
+        return res.status(200).send({people})
+        
     } catch (error) {
         return res.status(404).send({msg:"error"})
     }
