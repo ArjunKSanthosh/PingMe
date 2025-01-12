@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './home.scss'
-import { useNavigate } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import route from "../route";
 import axios from "axios";
 import Nav from "../Navbar/Nav";
@@ -33,6 +33,7 @@ const Home = () => {
     <div className="app-container">
       <Nav/>
       <div className="container">
+        <h1 style={{textAlign:'center'}}>CHATS</h1>
             {chatMember.map((member,ind)=> <Link to={`/chatcard/${member._id}`} className="content" key={ind}>
                     <img src={member.profile} alt={member.username} />
                     <p>{member.username}</p>

@@ -9,7 +9,8 @@ router.route("/signup").post(user.signUp);
 router.route('/home').get(Auth,user.home)
 router.route('/nav').get(Auth,user.nav);
 router.route('/listpeople').get(Auth,user.listpeople);
-
+router.route('/chat/:rid').get(Auth,user.chat);
+router.route("/addmessage/:rid").post(Auth,user.addMessage);
 
 
 export default router;

@@ -31,9 +31,10 @@ const getDetails=async()=>{
     }
 }
     return(
-        <div className="app-container">
+        <div className="app-container2">
       <Nav/>
-      <div className="container">
+        <h1 style={{textAlign:'center'}}>ALL CONTACTS</h1>
+      <div className="container2">
             {people.map((users,ind)=> <Link to={`/chatcard/${users._id}`} className="content" key={ind}>
                     <img src={users.profile} alt={users.username} />
                     <p>{users.username}</p>

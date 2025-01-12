@@ -15,7 +15,7 @@ function App() {
                             <Route path="/" Component={Home}/>
                             <Route path="/login" Component={Login}/>
                             <Route path='/signup' Component={SignUp}/>
-                            <Route path='/chatcard' Component={ChatCard}/>
+                            <Route path='/chatcard/:id' Component={ChatCard}/>
                             <Route path='/listpeople' Component={Listpeople}/>
                           </Routes>
               </BrowserRouter>

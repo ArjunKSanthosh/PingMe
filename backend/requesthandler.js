@@ -3,6 +3,7 @@ import bcrypt from 'bcrypt';
 import pkg from 'jsonwebtoken';
 const {sign}=pkg;
 import chatMemberSchema from './models/chatmember.model.js'
+import messageSchema from './models/message.model.js'
 
 export async function signIn(req, res){
     try {
@@ -83,10 +84,38 @@ export async function listpeople(req,res){
         if(!user)
             return res.status(403).send({msg:"Login to continue"})
         const people=await userSchema.find({_id:{$ne:_id}});
-        console.log(people);
         
         return res.status(200).send({people})
         
+    } catch (error) {
+        return res.status(404).send({msg:"error"})
+    }
+}
+export async function chat(req,res) {
+    try {
+        const {rid}=req.params;
+        const sid=req.user.userId;
+        const user=await userSchema.findOne({_id:sid});
+        if(!user)
+           return res.status(403).send({msg:"Login to continue"});
+        const receiver=await userSchema.findOne({_id:rid},{profile:1,username:1})
+        const chats=await messageSchema.find({$or:[{senderId:sid,receiverId:rid},{senderId:rid,receiverId:sid}]});
+        
+        return res.status(200).send({chats,receiver,uid:sid});
+    } catch (error) {
+        return res.status(404).send({msg:"error"})
+    }
+}
+export async function addMessage(req,res) {
+    try {
+        const {rid}=req.params;
+        const sid=req.user.userId;
+        const {message,date,time}=req.body;
+        const chatmember=await chatMemberSchema.findOne({senderId:sid,receiverId:rid});
+        if(!chatmember)
+           await chatMemberSchema.create({senderId:sid,receiverId:rid})
+        const chats=await messageSchema.create({senderId:sid,receiverId:rid,message,date,time});
+        return res.status(201).send({msg:"success"});
     } catch (error) {
         return res.status(404).send({msg:"error"})
     }
