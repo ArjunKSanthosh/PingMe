@@ -20,26 +20,30 @@ body {
   background-image: url('chat.png');
 
   .login-box {
-    background-color: #fff;
+    background-color:rgb(1, 45, 50);
     padding: 30px;
     border-radius: $border-radius;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+    width: 25%;
+    // max-width: 400px;
 
     h2 {
       text-align: center;
       margin-bottom: 20px;
-      color: $secondary-color;
+      color:white;
     }
 
     .login-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       .input-group {
         margin-bottom: 15px;
 
         input {
-          width: 100%;
-          padding: 12px;
+          width: 300px;
+          padding: 5px;
           font-size: 16px;
           border: 1px solid #ddd;
           border-radius: $border-radius;
@@ -48,8 +52,8 @@ body {
       }
 
       .login-btn {
-        width: 100%;
-        padding: 12px;
+        width: 20%;
+        padding: 10px;
         background-color: $primary-color;
         color: $btn-color;
         border: none;
@@ -58,7 +62,6 @@ body {
         cursor: pointer;
         margin-bottom: 10px;
         transition: background-color 0.3s;
-
         &:hover {
           background-color: darken($primary-color, 10%);
         }
@@ -83,18 +86,21 @@ body {
         transition: background-color 0.3s;
 
         &.google-btn {
-          background-color: #db4437;
+          background-color:white;
 
           &:hover {
-            background-color: darken(#db4437, 10%);
+            background-color: darken(#8d8b8b, 10%);
+            color: white;
           }
         }
 
         &.facebook-btn {
-          background-color: #3b5998;
+          background-color:white;
 
           &:hover {
-            background-color: darken(#3b5998, 10%);
+            background-color: darken(#8d8b8b, 10%);
+            color: white;
+            
           }
         }
 

@@ -2,6 +2,7 @@ import userSchema from './models/user.model.js'
 import bcrypt from 'bcrypt';
 import pkg from 'jsonwebtoken';
 const {sign}=pkg;
+import chatMemberSchema from './models/chatmember.model.js'
 
 export async function signIn(req, res){
     try {
@@ -43,3 +44,35 @@ export async function signUp(req,res) {
         return res.status(404).send({msg:"error"});
     }
   }
+  export async function home(req,res) {
+    try {
+        console.log("hi");
+        const _id=req.user.userId;
+        
+        const user=await userSchema.findOne({_id});
+        if(!user)
+           return res.status(403).send({msg:"Login to continue"});
+        const receivers=await chatMemberSchema.find({$or:[{senderId:_id},{receiverId:_id}]});
+        const chatMemberPromises = receivers.map(async (receiver) => {
+            if(receiver.senderId==_id)
+                return await userSchema.findOne({ _id: receiver.receiverId },{username:1,profile:1});
+            if(receiver.receiverId==_id)
+                return await userSchema.findOne({ _id: receiver.senderId },{username:1,profile:1});
+        });
+        const chatMember = await Promise.all(chatMemberPromises);
+        return res.status(200).send({chatMember});
+    } catch (error) {
+        return res.status(404).send({msg:"error"})
+    }
+}
+export async function nav(req,res) {
+    try {
+        const _id=req.user.userId;
+        const user=await userSchema.findOne({_id});
+        if(!user)
+           return res.status(403).send({msg:"Login to continue"});
+        return res.status(200).send({user});
+    } catch (error) {
+        return res.status(404).send({msg:"error"})
+    }
+}
