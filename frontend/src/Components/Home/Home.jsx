@@ -33,7 +33,7 @@ const Home = () => {
     <div className="app-container">
       <Nav/>
       <div className="container">
-        <h1 style={{textAlign:'center'}}>CHATS</h1>
+        <h3>CHATS</h3>
             {chatMember.map((member,ind)=> <Link to={`/chatcard/${member._id}`} className="content" key={ind}>
                     <img src={member.profile} alt={member.username} />
                     <p>{member.username}</p>

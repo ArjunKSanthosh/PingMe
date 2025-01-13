@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import route from '../route';
 import axios from 'axios';
-import './NewPassword.scss';
+import './NewPass.scss';
 import { useNavigate } from 'react-router-dom';
 
 const NewPassword = () => {

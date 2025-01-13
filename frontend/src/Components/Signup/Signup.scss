@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 .signup-container {
     display: flex;
     justify-content: center;
@@ -5,24 +6,35 @@
     min-height: 100vh;
     background-color: #f4f4f4;
     background: url('./chat.png');
+    font-family: "Varela Round", serif;
+
 
     .signup-box {
-        background-color: #fff;
+        background-color:rgba(1, 25, 42, 0.507);
         padding: 30px;
-        border-radius: 5px;
+        border-radius: 15px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         width: 100%;
         max-width: 400px;
-
+        backdrop-filter: blur(10px);
+        transition: box-shadow ease 0.6s;
+        transition: transform ease 0.4s;
+        &:hover{
+            box-shadow: rgb(8, 235, 220) 0px 24px 50px, rgba(243, 241, 241, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            transform: scale(1.01);
+        }
         h2 {
             text-align: center;
             margin-bottom: 20px;
-            color: #333;
+            color:white;
         }
 
         .image-upload-section {
             text-align: center;
             margin-bottom: 20px;
+            .camera{
+                width: 20px;
+            }
 
             .image-preview {
                 margin-bottom: 10px;
@@ -49,36 +61,46 @@
 
             .add-image-btn {
                 display: inline-block;
-                background-color: #4CAF50;
+                background-color:white;
                 color: #fff;
-                padding: 8px 16px;
-                border-radius: 5px;
+                padding: 10px 13px;
+                border-radius: 55px;
                 cursor: pointer;
                 font-size: 14px;
-                transition: background-color 0.3s;
+                transition: box-shadow ease 0.3s;
 
                 &:hover {
-                    background-color: darken(#4CAF50, 10%);
+                    box-shadow: rgb(8, 235, 220) 0px 24px 50px, rgba(243, 241, 241, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
                 }
 
                 input {
                     display: none;
+                    font-family: "Varela Round", serif;
+
                 }
             }
         }
 
         .signup-form {
+            
+        display: flex;
+        flex-direction: column;
+       justify-items: center;
             .input-group {
-                margin-bottom: 15px;
+                margin-bottom: 10px;
                 position: relative;
-
+                margin-right: 25px;
+                
                 input {
                     width: 100%;
-                    padding: 12px;
-                    font-size: 16px;
+                    padding: 10px;
+                    font-family: "Varela Round", serif;
+                    margin-bottom: 8px;
+                    font-size: 14px;
                     border: 1px solid #ddd;
-                    border-radius: 5px;
+                    border-radius: 25px;
                     background-color: #f1f1f1;
+                    color: #333;
                 }
             }
 
@@ -107,19 +129,22 @@
             }
 
             .register-btn {
-                width: 100%;
-                padding: 12px;
-                background-color: #4CAF50;
-                color: #fff;
+                width: 20%;
+                padding: 10px;
+                background-color:white;
+                color: black;
                 border: none;
-                border-radius: 5px;
-                font-size: 16px;
+                border-radius: 25px;
+                font-size: 13px;
+                font-weight: bold;
                 cursor: pointer;
+                margin: auto;
                 margin-bottom: 10px;
-                transition: background-color 0.3s;
+                transition: box-shadow ease 0.3s;
 
                 &:hover {
-                    background-color: darken(#4CAF50, 10%);
+                    box-shadow: rgb(8, 235, 220) 0px 24px 50px, rgba(243, 241, 241, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;    width: 20%;
+
                 }
             }
         }

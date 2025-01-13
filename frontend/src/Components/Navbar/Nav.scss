@@ -1,11 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Cookie&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Cookie&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 nav{
-    height: 8vh;
+    height: 11vh;
     width: 100%;
-background-color: rgb(0, 74, 84);
+    background-color:rgb(59, 99, 152);
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: #ffffff;
+    position: -webkit-sticky;
+    h3{
+      font-family: "Poppins", serif;
+      font-size: 28px;
+      font-weight: 400;
+    }
     .navbar-logo{
         text-decoration: none;
         color: #ffffff;
@@ -14,8 +22,8 @@ background-color: rgb(0, 74, 84);
         gap: 8px;
         margin-left: 2%;
         img{
-            width: 35px;
-            height: 35px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             object-fit: cover;
             object-position: center;
@@ -26,6 +34,10 @@ background-color: rgb(0, 74, 84);
         display: flex;
         align-items: center;
         gap: 10px;
+        h4{
+          font-family: "Poppins", serif;
+          font-size: 18px;
+        }
         .profile-containerr {
             position: relative;
             display: flex;
@@ -33,8 +45,8 @@ background-color: rgb(0, 74, 84);
       
             .profile-icon {
               cursor: pointer;
-              width: 30px;
-            height: 30px;
+              width: 40px;
+            height: 40px;
             border-radius: 50%;
             object-fit: cover;
             object-position: top;

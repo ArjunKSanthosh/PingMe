@@ -36,8 +36,8 @@ const Nav = () => {
   return (
     <nav>
         <Link to={'/'} className="navbar-logo">
-                <img src="ping.webp" alt="Logo" className="logo-image" />
-                <h1 className="website-name">PingMe</h1>
+                <img src="logo3.jpg" alt="Logo" className="logo-image" />
+                <h3 className="website-name">PingMe</h3>
         </Link>
         <div className="user">
             <h4>{user.username}</h4>

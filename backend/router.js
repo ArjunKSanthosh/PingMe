@@ -14,6 +14,9 @@ router.route("/addmessage/:rid").post(Auth,user.addMessage);
 router.route('/profile').get(Auth,user.profile);
 router.route('/editdetails').put(Auth,user.editDetails);
 router.route("/forgotpassword").post(user.forgotPassword);
+router.route("/changepassword").post(user.changePassword);
+router.route("/deletemessage/:_id").delete(Auth,user.deleteMessage);
+
 
 
 

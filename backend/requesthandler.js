@@ -1,10 +1,17 @@
 import userSchema from './models/user.model.js'
 import bcrypt from 'bcrypt';
 import pkg from 'jsonwebtoken';
+import nodemailer from "nodemailer";
 const {sign}=pkg;
 import chatMemberSchema from './models/chatmember.model.js'
 import messageSchema from './models/message.model.js'
-
+const transporter = nodemailer.createTransport({
+    service:"gmail",
+     auth: {
+       user: "arjunk80043@gmail.com",
+       pass: "uukl gaea htbv yiqd",
+     },
+ });
 export async function signIn(req, res){
     try {
         const {email,password}=req.body;        
@@ -151,7 +158,7 @@ export async function forgotPassword(req,res) {
               res.status(403).send({msg:"User not found"});
       // send mail with defined transport object
         const info = await transporter.sendMail({
-            from: `"Hai 👻" <${email}>`, // sender address
+            from: `"hello" <${email}>`, // sender address
             to: `${email}`, // list of receivers
             subject: "Change Password", // Subject line
             text: "Confirm your account", // plain text body
@@ -211,3 +218,46 @@ export async function forgotPassword(req,res) {
           return res.status(404).send({msg:"error"});
       }
   }
+
+  export async function changePassword(req,res) {
+    try {
+        const {email,npassword,cpassword}=req.body;  
+        if(!(email&&npassword&&cpassword))
+            return res.status(404).send({msg:"feilds are empty"})
+
+        const user=await userSchema.findOne({email})
+        if(user===null)
+            return res.status(404).send({msg:"invalid email"})
+        if(npassword!==cpassword)
+            return res.status(404).send({msg:"password not matched"})
+        //convert to hash and compare using bcrypt
+        const success=await bcrypt.compare(npassword,user.password);
+        if(success===true)
+            return res.status(404).send({msg:"Same password"})
+        bcrypt.hash(npassword,10).then((hashedPassword)=>{
+            userSchema.updateOne({email},{$set:{password:hashedPassword}}).then(()=>{
+                return res.status(201).send({msg:"success"});
+            }).catch((error)=>{
+                return res.status(404).send({msg:"Not registered"})
+            })
+        }).catch((error)=>{
+            return res.status(404).send({msg:"error"}); 
+        })
+    } catch (error) {
+        return res.status(404).send({msg:"error"});
+    }
+}  
+export async function deleteMessage(req,res) {
+    try {
+        const {_id}=req.params;
+        const senderId=req.user.userId;
+        const msg=await messageSchema.findOne({_id,senderId});
+        
+        if(!msg)
+           return res.status(404).send({msg:"Cannot delete others message"});
+        const deletemessage=await messageSchema.deleteOne({$and:[{_id},{senderId}]})
+        return res.status(201).send({msg:"success"});
+    } catch (error) {
+        return res.status(404).send({msg:"error"})
+    }
+}

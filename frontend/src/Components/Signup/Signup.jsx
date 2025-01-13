@@ -71,8 +71,8 @@ const handleFile=async(e)=>{
             )}
           </div>
           <label htmlFor="image-upload" className="add-image-btn">
-            Add Profile Image
-            <input
+                <img src="photo.png" alt="" className='camera' />           
+ <input
               id="image-upload"
               type="file"
               accept="image/*"
@@ -127,7 +127,7 @@ const handleFile=async(e)=>{
         </form>
         
         <div className="links">
-          <p>Already have an account? <a href="/login">Login</a></p>
+          <p style={{color:'white'}}>Already have an account? <a href="/login">Login</a></p>
         </div>
       </div>
     </div>
