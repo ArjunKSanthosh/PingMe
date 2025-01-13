@@ -56,16 +56,14 @@ const Login = () => {
           </div>
           <button type="submit" className="login-btn">Login</button>
         </form>
+          <p style={{textAlign:'center',color:'white',fontSize:'13px'}}>Login with social media accounts </p>
         
-          <p style={{textAlign:'center'}}>Login with social media acco </p>
         <div className="social-login">
           <button className="google-btn">
             <img src="/google.png" alt="Google" />
-           Google
           </button>
           <button className="facebook-btn">
             <img src="/fb.png" alt="Facebook" />
-            Facebook
           </button>
         </div>
 

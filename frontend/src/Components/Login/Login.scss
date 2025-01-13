@@ -1,12 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 // LoginPage.scss
-$primary-color: #4CAF50;
-$secondary-color: #333;
-$btn-color: #fff;
-$input-color: #f1f1f1;
-$border-radius: 5px;
+// $primary-color: #4CAF50;
+// $secondary-color: #333;
+// $btn-color: #fff;
+// $input-color: #f1f1f1;
+// $border-radius: 5px;
 
-body {
-  font-family: Arial, sans-serif;
+*{
   margin: 0;
   padding: 0;
 }
@@ -20,16 +20,18 @@ body {
   background-image: url('chat.png');
 
   .login-box {
-    background-color:rgb(1, 45, 50);
+    background-color:rgba(1, 45, 50, 0.507);
     padding: 30px;
-    border-radius: $border-radius;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    width: 25%;
+    border-radius:10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(243, 241, 241, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;    width: 20%;
+    height: 370px;
+    font-family: "Varela Round", serif;
+    backdrop-filter: blur(10px);
     // max-width: 400px;
 
     h2 {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
       color:white;
     }
 
@@ -43,28 +45,36 @@ body {
 
         input {
           width: 300px;
-          padding: 5px;
+          padding: 10px;
+          font-family: "Varela Round", serif;
           font-size: 16px;
-          border: 1px solid #ddd;
-          border-radius: $border-radius;
-          background-color: $input-color;
+          border:none;
+          border-radius:20px;
+          background-color:white;
+          transition: ease 0.6s;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+        }
+        &:hover{
+          border-radius: 20px;
         }
       }
 
       .login-btn {
         width: 20%;
+        font-family: "Varela Round", serif;
         padding: 10px;
-        background-color: $primary-color;
-        color: $btn-color;
+        background-color:white;
+        color: black;
         border: none;
-        border-radius: $border-radius;
+        border-radius:20px;
         font-size: 16px;
         cursor: pointer;
         margin-bottom: 10px;
         transition: background-color 0.3s;
-        &:hover {
-          background-color: darken($primary-color, 10%);
-        }
+        // &:hover {
+        //   background-color: darken($primary-color, 10%);
+        // }
       }
     }
 
@@ -72,6 +82,7 @@ body {
       display: flex;
       justify-content: space-between;
       margin-bottom: 15px;
+      margin-top: 25px;
 
       button {
         display: flex;
@@ -80,7 +91,7 @@ body {
         width: 48%;
         padding: 10px;
         border: none;
-        border-radius: $border-radius;
+        border-radius: 10px;
         cursor: pointer;
         font-size: 14px;
         transition: background-color 0.3s;
@@ -114,11 +125,14 @@ body {
     .links {
       text-align: center;
       a {
-        color: $primary-color;
+        color: white;
         text-decoration: none;
+        font-size: 12px;
       }
       p {
         margin-top: 10px;
+        color: white;
+        font-size: 12px;
       }
     }
   }
