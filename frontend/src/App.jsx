@@ -6,6 +6,8 @@ import SignUp from './Components/Signup/Signup';
 import Home from './Components/Home/Home';
 import ChatCard from './Components/Chatcard/Chatcard';
 import Listpeople from './Components/Listpeople/Listpeople';
+import Profile from './Components/Profile/Profile';
+import ForgotPass from './Components/ForgotPass/Forgotpass';
 
 function App() {
  return(
@@ -17,6 +19,10 @@ function App() {
                             <Route path='/signup' Component={SignUp}/>
                             <Route path='/chatcard/:id' Component={ChatCard}/>
                             <Route path='/listpeople' Component={Listpeople}/>
+                            <Route path='/profile' Component={Profile}/>
+                            <Route path='/forgotpassword' Component={ForgotPass}/>
+
+
                           </Routes>
               </BrowserRouter>
  )

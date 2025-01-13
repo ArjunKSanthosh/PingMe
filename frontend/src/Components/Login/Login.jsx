@@ -60,15 +60,15 @@ const Login = () => {
         
         <div className="social-login">
           <button className="google-btn">
-            <img src="/google.png" alt="Google" />
+            <img src="/g2.png" alt="Google" />
           </button>
           <button className="facebook-btn">
-            <img src="/fb.png" alt="Facebook" />
+            <img src="/f2.png" alt="Facebook" />
           </button>
         </div>
 
         <div className="links">
-          <a href="/forgot-password">Forgot Password?</a>
+          <a href="/forgotpassword">Forgot Password?</a>
           <p>Don't have an account? <a href="/signup">Sign Up</a></p>
         </div>
       </div>

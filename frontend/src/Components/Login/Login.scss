@@ -20,14 +20,21 @@
   background-image: url('chat.png');
 
   .login-box {
-    background-color:rgba(1, 45, 50, 0.507);
-    padding: 30px;
+    background-color:rgba(1, 25, 42, 0.507);
+    padding: 50px;
     border-radius:10px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(243, 241, 241, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;    width: 20%;
     height: 370px;
     font-family: "Varela Round", serif;
     backdrop-filter: blur(10px);
     // max-width: 400px;
+    transition: box-shadow ease 0.3s;
+    transition: transform ease 0.3s;
+
+    &:hover {
+     transform: scale(1.02);
+      box-shadow: rgba(8, 235, 220, 0.486) 0px 24px 50px, rgba(243, 241, 241, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;    width: 20%;
+    }
 
     h2 {
       text-align: center;
@@ -45,15 +52,15 @@
 
         input {
           width: 300px;
-          padding: 10px;
+          padding: 12px;
           font-family: "Varela Round", serif;
-          font-size: 16px;
+          font-size: 14px;
+          color: white;
           border:none;
           border-radius:20px;
-          background-color:white;
+          background-color:black;
           transition: ease 0.6s;
-          box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-
+          box-shadow: rgba(39, 39, 39, 0.733) 0px 30px 60px -12px inset, rgba(65, 65, 65, 0.3) 0px 18px 36px -18px inset;
         }
         &:hover{
           border-radius: 20px;
@@ -63,18 +70,19 @@
       .login-btn {
         width: 20%;
         font-family: "Varela Round", serif;
-        padding: 10px;
+        padding: 5px;
         background-color:white;
         color: black;
         border: none;
+        margin-top: 10px;
         border-radius:20px;
-        font-size: 16px;
+        font-size: 14px;
         cursor: pointer;
         margin-bottom: 10px;
-        transition: background-color 0.3s;
-        // &:hover {
-        //   background-color: darken($primary-color, 10%);
-        // }
+        transition: box-shadow ease 0.3s;
+        &:hover {
+          box-shadow: rgb(8, 235, 220) 0px 24px 50px, rgba(243, 241, 241, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;    width: 20%;
+        }
       }
     }
 
@@ -97,7 +105,7 @@
         transition: background-color 0.3s;
 
         &.google-btn {
-          background-color:white;
+          background-color:black;
 
           &:hover {
             background-color: darken(#8d8b8b, 10%);
@@ -106,7 +114,7 @@
         }
 
         &.facebook-btn {
-          background-color:white;
+          background-color:black;
 
           &:hover {
             background-color: darken(#8d8b8b, 10%);
