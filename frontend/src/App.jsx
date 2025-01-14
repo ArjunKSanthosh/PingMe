@@ -9,6 +9,7 @@ import Listpeople from './Components/Listpeople/Listpeople';
 import Profile from './Components/Profile/Profile';
 import ForgotPass from './Components/ForgotPass/Forgotpass';
 import NewPassword from './Components/Newpassword/Newpass';
+import RecProfile from './Components/RecProfile/RecProfil';
 
 function App() {
  return(
@@ -23,7 +24,7 @@ function App() {
                             <Route path='/profile' Component={Profile}/>
                             <Route path='/forgotpassword' Component={ForgotPass}/>
                             <Route path='/newpassword' Component={NewPassword}/>
-
+                            <Route path='/recprofile' Component={RecProfile}/>
 
 
                           </Routes>

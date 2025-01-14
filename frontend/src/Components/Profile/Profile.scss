@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Cookie&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');.Profile {
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Cookie&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.Profile {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    height: 85vh;
     font-family: "Poppins", serif;
     color: #333;
-  .Profile{
-    width: 100%;
-    height: 90vh;
-  
-  }
+    h1{
+      color: #6e6e6e;
+    }
+ 
     .profile-card {
       background-color:rgb(59, 99, 152);
       border-radius: 16px;
@@ -28,13 +28,14 @@
     border-bottom: 6px solid rgb(2, 212, 212);
       .avatar {
         .img_container {
-            height: 100px;
-            width: 100px;
+            height: 180px;
+            width: 180px;
           position: relative;
           margin: 0 auto;
           border:1px solid black;
-          border-radius: 50px;
-          margin-bottom: 150px;
+          border-radius: 100px;
+          margin-bottom: 130px;
+          margin-top: 60px;
           border-bottom: 1px solid black;
   
           .hover-effect {
@@ -54,8 +55,8 @@
           }
   
           .avatar-image3 {
-           height: 100px;
-           width: 100px;
+           height: 180px;
+           width: 180px;
             border-radius: 50%;
             object-fit: cover;
             transition: transform 0.3s ease;
@@ -106,7 +107,7 @@
         transition: border-color 0.3s ease;
         background: transparent;
         color: white;
-        
+        font-weight: bolder;
 
         &:focus {
           border-color: #fda085;
@@ -115,7 +116,8 @@
 
         &:disabled {
           border-color: #eee;
-          color: #aaa;
+          color:white;
+          font-weight:400;
         }
       }
 
@@ -175,16 +177,18 @@
             padding: 0.5rem;
             transition: border-color 0.3s ease;
             background: transparent;
-            color: #333;
+           font-weight: bolder;
   
             &:focus {
               border-color: #fda085;
               outline: none;
+              font-weight: bolder;
             }
   
             &:disabled {
               border-color: #eee;
-              color: #aaa;
+              color:white;
+              font-weight: 400;
             }
           }
   

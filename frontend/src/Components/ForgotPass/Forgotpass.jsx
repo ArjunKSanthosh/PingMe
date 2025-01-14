@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import route from '../route';
-import './ForgotPass.scss'
+import './Forgotpass.scss'
 
 const ForgotPass = () => {
   const navigate=useNavigate();

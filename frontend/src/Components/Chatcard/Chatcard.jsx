@@ -81,11 +81,15 @@ const ChatCard = () => {
       <div className="chat-card">
         <div className="chat-header">
           <Link to={'/'} className="h2">
-          <IoArrowBack size={24} color={'white'} />
+          <IoArrowBack size={24} color={'white'}  />
+          </Link>
+          <Link style={{textDecoration:'none'}}>
+          <div className="im1">
           <div className="im">
             <img src={receiver.profile} alt="" className="proim" />
           </div>
             <p>{receiver.username}</p>
+          </div>
           </Link>
         </div>
         <div className="chat-body">
