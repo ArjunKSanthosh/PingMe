@@ -83,7 +83,7 @@ const ChatCard = () => {
           <Link to={'/'} className="h2">
           <IoArrowBack size={24} color={'white'}  />
           </Link>
-          <Link style={{textDecoration:'none'}}>
+          <Link to={`/recprofile/${receiver._id}`} style={{textDecoration:'none'}}>
           <div className="im1">
           <div className="im">
             <img src={receiver.profile} alt="" className="proim" />
