@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Cookie&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');.app-container {
+.app-container {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -9,52 +9,81 @@
     width: 80%;
     margin: 20px auto;
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
     flex-direction: column;
     position: relative;
     align-items: center;
     background-color: white;
 
-    h3{
+    h3 {
       text-align: center;
-      color:rgba(0, 0, 0, 0.627);
+      color: rgba(0, 0, 0, 0.627);
       font-family: "Poppins", serif;
       font-size: 37px;
-      font-weight:400;
+      font-weight: 400;
     }
-    .content {
+
+    .chat-item {
       font-family: "Poppins", serif;
       display: flex;
-      align-items: center;
-      padding: 10px 15px;
+      align-items: flex-start;
+      width: 96.6%;
+      padding: 15px 20px;
       text-decoration: none;
-      background-color:rgb(59, 99, 152);
-      color:white;
+      background-color: rgb(59, 99, 152);
+      color: white;
       transition: background-color 0.2s;
-      border-bottom: 1px solid white;
-      width:97%;
-      padding: 18px;
-      
+      border-bottom: 1px solid rgba(255, 255, 255, 0.325);
+
       &:hover {
         background-color: rgb(38, 76, 125);
       }
 
-      img {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
+      .chat-left {
         margin-right: 15px;
-        object-fit: cover;
+
+        .chat-img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
       }
 
-      p {
-        margin: 0;
-        font-size:20px;
-        color: white;
+      .chat-right {
+        flex: 1;
+
+        .chat-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .username {
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 10px;
+          }
+
+          .count {
+            font-size: 14px;
+            color: #ffcc00;
+          }
+        }
+
+        .message {
+          font-size: 14px;
+          margin-top: 5px;
+          color: white;
+
+          &.seen {
+            color: #bbb;
+          }
+        }
       }
     }
 
-    .content:last-child {
+    .chat-item:last-child {
       border-bottom: none;
     }
 
@@ -62,8 +91,8 @@
       position: absolute;
       bottom: 20px;
       right: 20px;
-      background-color:blue;
-      border:1px solid black;
+      background-color: blue;
+      border: 1px solid black;
       border-radius: 50%;
       width: 60px;
       height: 60px;

@@ -55,7 +55,6 @@ export async function signUp(req,res) {
   export async function home(req,res) {
     try {
         const _id=req.user.userId;
-        
         const user=await userSchema.findOne({_id});
         if(!user)
            return res.status(403).send({msg:"Login to continue"});
@@ -66,8 +65,18 @@ export async function signUp(req,res) {
             if(receiver.receiverId==_id)
                 return await userSchema.findOne({ _id: receiver.senderId },{username:1,profile:1});
         });
-        const chatMember = await Promise.all(chatMemberPromises);
-        return res.status(200).send({chatMember});
+        const members = await Promise.all(chatMemberPromises);
+        const chatmembers=Array.from(new Map(members.map(member => [member.username, member])).values()).reverse()  
+        
+        const countPromises=chatmembers.map(async(member)=>{
+            return await messageSchema.countDocuments({senderId:member._id,seen:false})
+        })
+        const counts=await Promise.all(countPromises);
+        const messagePromises=chatmembers.map(async(member)=>{
+            return await messageSchema.findOne({$or:[{senderId:_id,receiverId:member._id},{senderId:member._id,receiverId:_id}]},{message:1,seen:1}).sort({ _id: -1 })
+        })
+        const lmessages=await Promise.all(messagePromises);
+        return res.status(200).send({chatmembers,counts,lmessages});
     } catch (error) {
         return res.status(404).send({msg:"error"})
     }
